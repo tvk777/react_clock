@@ -21,7 +21,10 @@ export class App extends React.Component<{}, State> {
 
   timerId = 0;
 
-  hideClock = () => this.setState({ hasClock: false });
+  hideClock = (event: MouseEvent) => {
+    event.preventDefault();
+    this.setState({ hasClock: false });
+  };
 
   showClock = () => this.setState({ hasClock: true });
 
